@@ -102,12 +102,12 @@ if uploaded_file is not None:
             file_type = "png"
 
         # save file
-        filename = "{secrets.token_hex(8)}.{file_type}"
+        filename = f"{secrets.token_hex(8)}.{file_type}"
 
-        with open("./images/{filename}", "wb") as fp:
+        with open(f"./images/{filename}", "wb") as fp:
             fp.write(byte_data)
 
-        file_path = "./images/{filename}"
+        file_path = f"./images/{filename}"
 
         # load images
         image_documents = SimpleDirectoryReader(
